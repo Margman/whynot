@@ -1,4 +1,4 @@
-
+print("yes")
 	local synreq = syn
 		if req ~= nil then
 		request({
