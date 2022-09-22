@@ -4,7 +4,7 @@ print("Current game KAT") elseif
 game.PlaceId == "2788229376" then 
 loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Margman/whynot/main/Da%20hood%20script%202022"))()
 print("Current game Da Hood") elseif 
-game.PlaceId = "1224212277" then
+game.PlaceId == "1224212277" then
 loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Margman/whynot/main/mad%20city%20script%202022"))()
 print("Current game Mad city")
 end 
