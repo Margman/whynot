@@ -1,0 +1,22 @@
+local tablefind = table.find
+local SpoofTable = {
+    WalkSpeed = 16,
+    JumpPower = 50
+}
+
+local __index
+__index = hookmetamethod(game, "__index", function(t, k)
+    if (not checkcaller() and t:IsA("Humanoid") and (k == "WalkSpeed" or k == "JumpPower")) then
+        return SpoofTable[k]
+    end
+    return __index(t, k)
+end)
+
+local __newindex
+__newindex = hookmetamethod(game, "__newindex", function(t, k, v)
+    if (not checkcaller() and t:IsA("Humanoid") and (k == "WalkSpeed" or k == "JumpPower")) then
+        SpoofTable[k] = v
+        return
+    end
+    return __newindex(t, k, v)
+end)
